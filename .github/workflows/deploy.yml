@@ -49,7 +49,7 @@ jobs: # 임의의 값을 넣은것이므로 변경 가능
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_PRIVATE_KEY }}
           source: project.jar
-          target: /home/ec2-user/litmap-server/tobe
+          target: /home/ec2-user/hackerthon/tobe
 
       # SSH로 EC2에 접속하여 배포 및 서버 재시작
       # 기존 서버 종료 후 재시작. nohup은 백그라운드 실행, 로그는 output.log로 저장
