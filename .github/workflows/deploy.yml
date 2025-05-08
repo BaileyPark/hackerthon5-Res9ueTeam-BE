@@ -72,8 +72,9 @@ jobs: # 임의의 값을 넣은것이므로 변경 가능
             # 기존 8080 포트 사용 중인 프로세스 종료
             sudo fuser -k -n tcp 8080 || true
             
-            # 백그라운드에서 Spring Boot 실행 (로그 파일 생성)
-            sudo nohup java -jar project.jar > ./output.log 2>&1 &
-            
+            # 절대 경로로 java 실행
+            cd /home/ec2-user/hackerthon/current
+            sudo nohup /usr/lib/jvm/java-17-amazon-corretto/bin/java -jar project.jar > ./output.log 2>&1 &
+    
             # 임시 폴더 삭제
             rm -rf /home/ec2-user/hackerthon/tobe
